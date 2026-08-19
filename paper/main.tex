@@ -1,0 +1,867 @@
+\documentclass[11pt]{amsart}
+% claims-sync: status=AUTHOR_REVIEW manifest=CLAIMS.md
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,capitalize,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Seg}{\operatorname{Seg}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\boxt}{\mathbin{\boxtimes}}
+\newcommand{\Nsp}{\mathcal N}
+\newcommand{\Msp}{\mathcal M}
+
+\title[Normalized Hessian Spaces and Kronecker Products]{Normalized Hessian Spaces and Kronecker Products\\of Symmetric Persistent Tensors}
+\author[Adam Guetz]{Adam Guetz}
+\address{Learned Response Labs}
+\date{August 18, 2026}
+
+\begin{document}
+
+\begin{abstract}
+We revisit the Kronecker-closure claim for symmetric persistent tensors in
+Gharahi's recent preprint \emph{Kronecker Products of Symmetric Persistent
+Tensors}.  The proof of its polarized Hessian identity establishes the desired
+perfect-power determinant identity on tuples of decomposable polarization
+vectors and then extends the proposed multilinear root by the universal
+property of the tensor product.  This does not by itself extend the determinant
+identity to arbitrary polarization tensors: the obstruction is precisely the
+Segre ideal already noted earlier in that paper.
+
+No counterexample to the closure theorem is produced here.  Instead we develop
+a normalized polarized-Hessian space that gives several replacement results.
+If one factor has a simultaneously strictly triangularizable normalized
+Hessian space and the other has a nil normalized Hessian space, then their
+Kronecker product is persistent.  If, in addition, the certificate of the first
+factor factors through a single linear form, no nil-space hypothesis is needed
+on the second factor.  A trace-zero Jordan-closure criterion implies the
+required simultaneous triangularizability by Jacobson's generalized Engel
+theorem for weakly closed sets.  These arguments give unconditional Kronecker
+closure when one factor has dimension at most three, in every degree, and for
+cubics when one factor has dimension at most four.
+
+We also prove a Veronese-contraction lemma reducing the fixed-linear-form
+condition in arbitrary degree, for each fixed dimension, to a quartic base
+case.  Finally, exact symbolic computations on several hundred persistent
+examples show Jordan closure with no observed failure, including tests on
+Kronecker products formed in the full product tensor space.  The general
+implication from persistence to the required normalized-Hessian structure
+remains open.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Persistent tensors were introduced as a class adapted to the substitution
+method and tensor-rank lower bounds; in the symmetric setting they admit a
+strong Hessian characterization \cite{GO25,GL24}.  Gharahi's recent preprint
+\cite{G26} proposes an especially natural closure property: if
+\[
+  f\in \Sym^n V,\qquad g\in \Sym^n W
+\]
+are symmetric persistent tensors, then their Kronecker product
+$f\boxt g\in\Sym^n(V\otimes W)$ is again persistent.
+
+The purpose of this note is constructive.  We first isolate a logical issue in
+the proof of the polarized Hessian identity in \cite[Proposition~10]{G26}.
+The issue does not supply a counterexample, and exact symbolic tests continue
+to support the stated closure theorem.  We then give a matrix-space mechanism
+that proves the theorem under explicit structural hypotheses and yields several
+unconditional subcases.
+
+Let $r=n-2$.  By the Hessian characterization of Gharahi--Ottaviani, a
+persistent form $f\in\Sym^n V$, $\dim V=d$, admits a nonzero multilinear
+certificate
+\[
+ P_f:V^r\longrightarrow \C
+\]
+such that
+\begin{equation}\label{eq:certificate-intro}
+ \det H_f(A)=P_f(A)^d,\qquad A\in V^r,
+\end{equation}
+where $H_f(A)$ is the constant Hessian matrix of the quadratic partial
+polarization of $f$ at the tuple $A$.
+After choosing an admissible base tuple $B$ with $P_f(B)\neq0$, define
+\[
+\begin{aligned}
+ M_f(A)&=H_f(B)^{-1}H_f(A),\qquad
+ \lambda_f(A)=\frac{P_f(A)}{P_f(B)},\\
+ N_f(A)&=M_f(A)-\lambda_f(A)I.
+\end{aligned}
+\]
+The central object of this note is the normalized Hessian space
+\[
+ \Nsp_f(B)=\Span\{N_f(A):A\in V^r\}\subseteq\End(V).
+\]
+The principal sufficient conditions are:
+\begin{itemize}[leftmargin=2em]
+\item[(T)] $\Nsp_f(B)$ is simultaneously strictly triangularizable;
+\item[(Nil)] every element of $\Nsp_f(B)$ is nilpotent;
+\item[(TR)] every element of $\Nsp_f(B)$ has trace zero;
+\item[(JC)] $XY+YX\in\Nsp_f(B)$ for all $X,Y\in\Nsp_f(B)$.
+\end{itemize}
+We make no general base-independence claim for (Nil), (TR), or (JC); the
+sufficient conditions below are existential in the choice of an admissible
+base.
+
+The main conclusions are as follows.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.3em]
+\item If $f$ has (T) and $g$ has (Nil), then $f\boxt g$ is persistent
+      (\cref{thm:TNil}).
+\item If $f$ has (T) and its certificate factors through one fixed linear
+      form in all polarization slots, then $f\boxt g$ is persistent for
+      \emph{every} persistent $g$ (\cref{thm:factorized}).
+\item (TR)+(JC) imply (T).  The only external input is Jacobson's generalized
+      Engel theorem for weakly closed sets of nilpotent transformations
+      (\cref{thm:jacobson}).
+\item Consequently, Kronecker closure is unconditional when one factor has
+      dimension $d\le3$, for arbitrary degree; for $n=3$ it is unconditional
+      when one factor has $d\le4$ (\cref{cor:small-d,cor:cubic-d4}).
+\item A fixed-linear-form certificate in all degrees reduces, for each fixed
+      $d$, to a quartic rank-one problem (\cref{thm:veronese}).
+\end{enumerate}
+
+The general theorem of \cite{G26} is therefore not established by the arguments
+in this note, but its unresolved content is considerably more structured than
+the original Segre-to-global step suggests.
+
+\section{The Segre obstruction in the polarized proof}
+
+We use the conventions of \cite{G26}.  If
+$f\in\Sym^n V$ and $g\in\Sym^n W$, then for decomposable polarization
+vectors
+\[
+ U^{(i)}=v^{(i)}\otimes w^{(i)},\qquad 1\le i\le r=n-2,
+\]
+the differentiation identities of \cite[Proposition~7 and
+Corollary~8]{G26} give
+\begin{equation}\label{eq:decomp-H}
+ H_{f\boxt g}(U^{(1)},\ldots,U^{(r)})
+ =\frac1{n!}\,H_f(v^{(1)},\ldots,v^{(r)})
+        \boxt H_g(w^{(1)},\ldots,w^{(r)}),
+\end{equation}
+where the right-hand side is now an ordinary matrix Kronecker product.
+Therefore, for persistent $f$ and $g$,
+\begin{equation}\label{eq:decomp-det}
+ \det H_{f\boxt g}(U^{(1)},\ldots,U^{(r)})
+ =\left[
+   \frac1{n!}P_f(v^{(1)},\ldots,v^{(r)})
+                P_g(w^{(1)},\ldots,w^{(r)})
+  \right]^{d_1d_2}.
+\end{equation}
+The product inside brackets is bilinear in each pair
+$(v^{(i)},w^{(i)})$, so the universal property of the tensor product does
+indeed define a unique multilinear form
+\begin{equation}\label{eq:Ph-def}
+ P_{f\boxt g}:(V\otimes W)^r\longrightarrow\C
+\end{equation}
+whose value on decomposable tuples is the bracketed expression in
+\eqref{eq:decomp-det}.
+
+The issue is that the universal property extends the \emph{candidate root}
+$P_{f\boxt g}$, not the determinant identity.  For each polarization slot,
+$\det H_{f\boxt g}$ has degree $D=d_1d_2$ in the coordinates of
+$U^{(i)}$, whereas $P_{f\boxt g}^D$ has the same degree.  Equality of these
+polynomials on rank-one tensors does not determine them on $V\otimes W$.
+Their difference may lie in the ideal of the Segre variety.
+
+This is exactly the obstruction noted immediately before Proposition~10 in
+\cite[Remark~9]{G26}: polynomial equality on
+\[
+ \Seg(\PP V\times\PP W)\subset\PP(V\otimes W)
+\]
+does not imply global polynomial equality because the Segre ideal, generated
+by the $2\times2$ minors of the coordinate matrix, is nonzero.  The same issue
+persists independently in each polarization slot.
+
+Representation-theoretically, restriction to decomposable tensors detects the
+Cartan component
+\[
+ \Sym^D V^*\otimes\Sym^D W^*
+ \subset \Sym^D(V\otimes W)^*,
+\]
+while the other Cauchy summands vanish upon the corresponding Segre
+restriction.  Thus a repair must explain why the determinant residual has no
+component in this kernel; multilinearity of the proposed root alone does not do
+so.
+
+\begin{remark}
+This observation does not imply that the polarized identity is false.  In fact,
+the symbolic calculations described in \cref{sec:computations} repeatedly
+confirm the identity at nondecomposable polarization tensors.  The point is only
+that an additional structural argument is required.
+\end{remark}
+
+\section{Normalized polarized Hessian spaces}
+
+Let $f\in\Sym^n V$ be persistent, $d=\dim V$, and $r=n-2$.  Write
+\[
+ H_f(A)=H_f(a_1,\ldots,a_r)
+\]
+for the Hessian matrix of the quadratic partial polarization
+$\partial_{a_1}\cdots\partial_{a_r}f$.  Fix once and for all a certificate
+$P_f$ satisfying \eqref{eq:certificate-intro}.
+
+\begin{definition}[Admissible base and normalized Hessian space]
+An \emph{admissible base tuple} is $B=(b_1,\ldots,b_r)\in V^r$ with
+$P_f(B)\neq0$.  Set
+\[
+ G_f=H_f(B),\qquad
+ M_f(A)=G_f^{-1}H_f(A),\qquad
+ \lambda_f(A)=P_f(A)/P_f(B),
+\]
+and
+\begin{equation}\label{eq:N-def}
+ N_f(A)=M_f(A)-\lambda_f(A)I.
+\end{equation}
+The associated normalized Hessian space is
+\[
+ \Nsp_f(B)=\Span\{N_f(A):A\in V^r\}.
+\]
+\end{definition}
+
+Both $H_f(A)$ and $P_f(A)$ are multilinear in the $r$ polarization slots, so
+$N_f(A)$ is multilinear as well.  In particular, relative to a basis of $V$,
+$\Nsp_f(B)$ is spanned by at most $d^r$ basis-tuple evaluations.
+
+For later use we record the multilinear extension of
+\eqref{eq:decomp-H}.
+
+\begin{lemma}[Global matrix expansion]\label{lem:matrix-expansion}
+Let $h=f\boxt g$.  For arbitrary
+$U^{(i)}\in V\otimes W$, choose finite decompositions
+\[
+ U^{(i)}=\sum_{a_i}v^{(i)}_{a_i}\otimes w^{(i)}_{a_i}.
+\]
+For a multi-index $\alpha=(a_1,\ldots,a_r)$ put
+\[
+ A_\alpha=(v^{(1)}_{a_1},\ldots,v^{(r)}_{a_r}),\qquad
+ C_\alpha=(w^{(1)}_{a_1},\ldots,w^{(r)}_{a_r}).
+\]
+Then
+\begin{equation}\label{eq:global-matrix-expansion}
+ H_h(U^{(1)},\ldots,U^{(r)})
+ =\frac1{n!}\sum_\alpha H_f(A_\alpha)\boxt H_g(C_\alpha).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Equation \eqref{eq:decomp-H} holds on a decomposable choice in each slot.
+Both sides of \eqref{eq:global-matrix-expansion} are multilinear separately in
+each $U^{(i)}$, so expanding each chosen decomposition gives the result.
+Notice that no determinant is taken in this step; this is precisely why the
+extension is legitimate.
+\end{proof}
+
+We now give the first replacement for the disputed Segre-to-global step.
+
+\begin{theorem}[Triangularizable--nil criterion]\label{thm:TNil}
+Let $f\in\Sym^n V$ and $g\in\Sym^n W$ be persistent.  Suppose there are
+admissible base tuples $B$ and $C$ such that
+\begin{enumerate}[label=(\alph*)]
+\item $\Nsp_f(B)$ is simultaneously strictly triangularizable, and
+\item every element of $\Nsp_g(C)$ is nilpotent.
+\end{enumerate}
+Then $f\boxt g$ is persistent.
+\end{theorem}
+
+\begin{proof}
+Write $d_1=\dim V$, $d_2=\dim W$, $D=d_1d_2$, and choose arbitrary
+polarization tensors $U^{(1)},\ldots,U^{(r)}\in V\otimes W$.  Using
+\cref{lem:matrix-expansion} and factoring the base Hessians gives
+\begin{equation}\label{eq:Xi-factor}
+ H_{f\boxt g}(U)=\frac1{n!}(G_f\boxt G_g)\,\Xi(U),
+\end{equation}
+where
+\[
+ \Xi(U)=\sum_\alpha M_f(A_\alpha)\boxt M_g(C_\alpha).
+\]
+Choose a basis of $V$ in which every $N_f(A)$ is strictly upper triangular.
+Since
+$M_f(A)=\lambda_f(A)I+N_f(A)$, the matrix $\Xi(U)$ is block upper
+triangular, with $d_1$ identical diagonal blocks
+\begin{equation}\label{eq:Y-def}
+ Y=\sum_\alpha \lambda_f(A_\alpha)M_g(C_\alpha).
+\end{equation}
+Consequently
+\[
+ \det\Xi(U)=\det(Y)^{d_1}.
+\]
+Write
+\[
+ \mu=\sum_\alpha\lambda_f(A_\alpha)\lambda_g(C_\alpha).
+\]
+Then
+\[
+ Y=\mu I+
+ \sum_\alpha\lambda_f(A_\alpha)N_g(C_\alpha)
+   =\mu I+\widetilde N,
+\]
+with $\widetilde N\in\Nsp_g(C)$.  By hypothesis $\widetilde N$ is nilpotent,
+so $\det Y=\mu^{d_2}$ and therefore
+\begin{equation}\label{eq:Xi-det}
+ \det\Xi(U)=\mu^D.
+\end{equation}
+
+The multilinear root \eqref{eq:Ph-def} satisfies, after expansion of the same
+decompositions,
+\[
+ P_{f\boxt g}(U)
+ =\frac1{n!}\sum_\alpha P_f(A_\alpha)P_g(C_\alpha)
+ =\frac{P_f(B)P_g(C)}{n!}\,\mu.
+\]
+Finally,
+\[
+ \det(G_f\boxt G_g)
+ =\det(G_f)^{d_2}\det(G_g)^{d_1}
+ =\big(P_f(B)P_g(C)\big)^D.
+\]
+Taking determinants in \eqref{eq:Xi-factor} and using
+\eqref{eq:Xi-det} gives
+\[
+ \det H_{f\boxt g}(U)=P_{f\boxt g}(U)^D
+\]
+for arbitrary $U$.  The Hessian characterization of persistence
+\cite[Theorem~2(c)]{GO25} completes the proof.
+\end{proof}
+
+A stronger one-sided conclusion is available when the certificate of the
+triangularized factor has rank one in its polarization slots.
+
+\begin{definition}[Fixed-linear-form certificate]
+We say that $f$ satisfies \emph{(a-multi)} if
+\begin{equation}\label{eq:a-multi}
+ P_f(a_1,\ldots,a_r)=c\,\ell(a_1)\cdots\ell(a_r)
+\end{equation}
+for some $0\neq c\in\C$ and $0\neq\ell\in V^*$.
+\end{definition}
+
+When $P_f$ is symmetric, this is the polarized form of condition (a) in
+\cite{GO25}, namely that the ordinary Hessian is a nonzero scalar times a
+$d(n-2)$-th power of a linear form.
+
+\begin{theorem}[Factorized-certificate criterion]\label{thm:factorized}
+Let $f\in\Sym^nV$ and $g\in\Sym^nW$ be persistent.  Suppose $f$ satisfies
+(a-multi) and, at an admissible base $B$, $\Nsp_f(B)$ is simultaneously
+strictly triangularizable.  Then $f\boxt g$ is persistent, with no nil-space or
+triangularizability hypothesis on $g$.
+\end{theorem}
+
+\begin{proof}
+Use the notation of the proof of \cref{thm:TNil}.  Since (a-multi) holds and
+$B=(b_1,\ldots,b_r)$ is admissible, define slotwise normalized forms
+\[
+ \widehat\ell_i(v)=\frac{\ell(v)}{\ell(b_i)}.
+\]
+For decompositions
+$U^{(i)}=\sum_{a_i}v^{(i)}_{a_i}\otimes w^{(i)}_{a_i}$, set
+\begin{equation}\label{eq:Wi}
+ W^{(i)}=\sum_{a_i}\widehat\ell_i(v^{(i)}_{a_i})w^{(i)}_{a_i}\in W.
+\end{equation}
+The diagonal block \eqref{eq:Y-def} becomes, by multilinearity of $M_g$,
+\[
+ Y=M_g(W^{(1)},\ldots,W^{(r)}).
+\]
+Persistence of $g$ therefore gives
+\[
+ \det Y=\lambda_g(W^{(1)},\ldots,W^{(r)})^{d_2}.
+\]
+As in \cref{thm:TNil}, block triangularity yields
+\[
+ \det\Xi(U)=\lambda_g(W^{(1)},\ldots,W^{(r)})^D.
+\]
+On the other hand, the multilinear extension defining $P_{f\boxt g}$ gives
+\[
+ P_{f\boxt g}(U)
+ =\frac{P_f(B)P_g(C)}{n!}
+   \lambda_g(W^{(1)},\ldots,W^{(r)}).
+\]
+The same determinant calculation as before proves the required $D$-th power
+identity globally.
+\end{proof}
+
+\section{Jordan closure and Jacobson's generalized Engel theorem}
+
+The simultaneous triangularizability hypothesis in the preceding theorems is a
+normal-form condition.  The following criterion replaces it with polynomial
+membership identities in the normalized Hessian space.
+
+\begin{proposition}[Trace plus Jordan closure implies nilpotence]
+\label{prop:TRJCNil}
+Let $\Nsp\subseteq\End(V)$ be a linear space over a field of characteristic
+zero.  Assume
+\[
+ \tr X=0\quad\text{for all }X\in\Nsp,
+ \qquad
+ XY+YX\in\Nsp\quad\text{for all }X,Y\in\Nsp.
+\]
+Then every $X\in\Nsp$ is nilpotent.
+\end{proposition}
+
+\begin{proof}
+Jordan closure is equivalent to closure under squaring, since
+\[
+ XY+YX=(X+Y)^2-X^2-Y^2.
+\]
+Hence $X^k\in\Nsp$ for every $k\ge1$: from $X^k\in\Nsp$ we obtain
+$2X^{k+1}=XX^k+X^kX\in\Nsp$.  Therefore
+$\tr(X^k)=0$ for all $k\ge1$.  Newton's identities imply that all non-leading
+coefficients of the characteristic polynomial of $X$ vanish, so
+$\chi_X(t)=t^{\dim V}$.  Thus $X$ is nilpotent.
+\end{proof}
+
+The remaining passage from pointwise nilpotence to simultaneous strict
+triangularizability is false for arbitrary linear spaces of matrices.  Jordan
+closure supplies exactly the extra multiplicative closure needed for a classical
+theorem of Jacobson.
+
+\begin{theorem}[Trace--Jordan criterion]\label{thm:jacobson}
+Let $\Nsp\subseteq\End(V)$ be a finite-dimensional linear space over $\C$.
+If $\Nsp$ is trace zero and Jordan closed, then $\Nsp$ is simultaneously
+strictly triangularizable.
+\end{theorem}
+
+\begin{proof}
+By \cref{prop:TRJCNil}, every element of $\Nsp$ is nilpotent.  Moreover
+$\Nsp$ is a \emph{weakly closed} set in Jacobson's sense: for every
+$X,Y\in\Nsp$,
+\[
+ XY+1\cdot YX\in\Nsp.
+\]
+Jacobson's generalized Engel theorem \cite{J52,J62} states that the associative
+enveloping algebra $\mathcal A$ generated by a weakly closed set of nilpotent
+linear transformations on a finite-dimensional vector space is nilpotent.
+Thus $\mathcal A^m=0$ for some $m$.
+
+For completeness, a nilpotent associative algebra of transformations is
+simultaneously strictly triangularizable.  If $\mathcal A\neq0$, choose the
+largest $k$ with $\mathcal A^kV\neq0$; then any nonzero
+$v\in\mathcal A^kV$ satisfies $\mathcal A v=0$.  The induced algebra on
+$V/\C v$ is again nilpotent.  Induction on $\dim V$ gives a complete invariant
+flag on which every element of $\mathcal A$, hence every element of $\Nsp$,
+acts strictly triangularly.
+\end{proof}
+
+Combining \cref{thm:TNil,thm:jacobson} gives a theorem-shaped strengthening of
+the computational Jordan test.
+
+\begin{corollary}\label{cor:TRJC-product}
+Let $f$ and $g$ be persistent.  If, for some admissible bases, $\Nsp_f$ satisfies
+(TR)+(JC) and $\Nsp_g$ satisfies (Nil), then $f\boxt g$ is persistent.  If
+$f$ additionally satisfies (a-multi), the hypothesis on $g$ is unnecessary.
+\end{corollary}
+
+This isolates the following identity-shaped open question.
+
+\begin{question}[Normalized Hessian Jordan closure]\label{q:JC}
+Does every persistent symmetric tensor admit an admissible base for which its
+normalized Hessian space is trace zero and Jordan closed?
+\end{question}
+
+A positive answer would imply the triangularizability mechanism needed above.
+It is stronger than simultaneous triangularizability as a statement about
+abstract matrix spaces, but it is also more algebraic: Jordan closure can be
+expressed by explicit polynomial span-membership identities.
+
+\section{Unconditional low-dimensional consequences}
+
+The classifications in \cite[Theorem~5]{GO25} make the preceding criteria
+unconditional in several nontrivial regimes.
+
+\begin{corollary}[One factor of dimension at most three]\label{cor:small-d}
+Let $f\in\Sym^n\C^{d_1}$ and $g\in\Sym^n\C^{d_2}$ be persistent.  If
+$\min(d_1,d_2)\le3$, then $f\boxt g$ is persistent.
+\end{corollary}
+
+\begin{proof}
+For $d=2$ and $d=3$, \cite[Theorem~5]{GO25} gives, up to $\mathrm{GL}$,
+respectively the normal forms
+\[
+ x_0^{n-1}x_1,
+ \qquad
+ x_0^{n-1}x_2+x_0^{n-2}x_1^2.
+\]
+Their Hessian certificates satisfy (a-multi).  At the diagonal base
+$(e_0,\ldots,e_0)$, a direct calculation gives
+\[
+ \Nsp_{x_0^{n-1}x_1}=\C E_{21}
+\]
+and, for the ternary normal form,
+\[
+ \Nsp\subseteq
+ \Span\{E_{21}+c_nE_{32},\ E_{31}\}
+\]
+for a nonzero scalar $c_n$.  Both spaces are strictly lower triangular.
+Thus the low-dimensional factor satisfies the hypotheses of
+\cref{thm:factorized}; symmetry of the Kronecker product in its two factors
+finishes the proof.
+\end{proof}
+
+For cubics there is a further dimension-four case.
+
+\begin{corollary}[Cubics with one factor of dimension at most four]
+\label{cor:cubic-d4}
+Let $f\in\Sym^3\C^{d_1}$ and $g\in\Sym^3\C^{d_2}$ be persistent.  If
+$\min(d_1,d_2)\le4$, then $f\boxt g$ is persistent.
+\end{corollary}
+
+\begin{proof}
+For $n=3$, the certificate has one slot, so (a-multi) is automatic.  The cases
+$d\le3$ follow from \cref{cor:small-d}.  For $d=4$, \cite[Theorem~5]{GO25}
+puts a persistent cubic, up to $\mathrm{GL}$, in the form
+\[
+ f=a x_0^2x_3+b x_0x_1x_2+c x_1^3,\qquad ab\neq0.
+\]
+Its Hessian at $e_0$ is nonsingular, and with
+$M(v)=H_f(e_0)^{-1}H_f(v)$ one computes
+\[
+ M(v)-v_0I=
+ \begin{pmatrix}
+ 0&0&0&0\\
+ v_1&0&0&0\\
+ v_2&\frac{6c}{b}v_1&0&0\\
+ v_3&\frac{b}{2a}v_2&\frac{b}{2a}v_1&0
+ \end{pmatrix}.
+\]
+Hence the normalized Hessian space is simultaneously strictly lower triangular.
+Apply \cref{thm:factorized}.
+\end{proof}
+
+These corollaries are independent of the disputed Segre-to-global inference in
+\cite[Proposition~10]{G26}.
+
+\section{A cubic algebra interpretation}
+
+For cubics the Jordan-closure condition has an especially rigid interpretation.
+Let $f\in\Sym^3V$ be persistent, choose $b\in V$ with $H_f(b)$ nonsingular, and
+set
+\[
+ G=H_f(b),\qquad M(u)=G^{-1}H_f(u).
+\]
+Then $M(b)=I$.  Full symmetry of the cubic tensor implies
+\begin{equation}\label{eq:comm-prod}
+ M(u)v=M(v)u\qquad (u,v\in V).
+\end{equation}
+Indeed, pairing both sides with an arbitrary $w$ using the nondegenerate form
+$G$ reduces \eqref{eq:comm-prod} to symmetry of the associated trilinear form.
+Thus
+\[
+ u*v:=M(u)v
+\]
+defines a commutative bilinear product on $V$ with unit $b$.
+
+\begin{proposition}\label{prop:cubic-assoc}
+Assume the cubic normalized Hessian space is Jordan closed.  Then the product
+$*$ above is associative.  Equivalently, $M(V)$ is a unital commutative
+associative subalgebra of $\End(V)$ and $M(u)$ is left multiplication by $u$.
+\end{proposition}
+
+\begin{proof}
+Jordan closure of $\Nsp_f$ is equivalent to Jordan closure of
+$M(V)=\C I+\Nsp_f$.  Since persistence implies conciseness by definition \cite[Definition~1]{GO25}, the linear map
+$M:V\to\End(V)$ is injective.  Hence for $u,v\in V$ there is a unique element
+$q(u,v)$ with
+\[
+ M(q(u,v))=\frac12\big(M(u)M(v)+M(v)M(u)\big).
+\]
+Apply both sides to the unit $b$.  By \eqref{eq:comm-prod},
+$q(u,v)=u*v$, so
+\begin{equation}\label{eq:Jordan-L}
+ M(u*v)=\frac12\big(M(u)M(v)+M(v)M(u)\big).
+\end{equation}
+Applying \eqref{eq:Jordan-L} to $w$ gives
+\[
+ 2(u*v)*w=u*(v*w)+v*(u*w).
+\]
+Cyclically permuting $u,v,w$ yields three equations.  Subtracting any two shows
+$(u*v)*w=u*(v*w)$ (over characteristic zero), hence associativity.
+\end{proof}
+
+This is slightly stronger than merely obtaining a Jordan algebra: in the Hessian
+setting, Jordan closure of the regular multiplication operators forces the
+underlying commutative product to be associative.  It suggests studying persistent
+cubics through finite-dimensional local/Frobenius-type algebras rather than through
+arbitrary nilpotent matrix spaces.
+
+\section{A Veronese contraction reduction to quartics}
+
+The factorized-certificate condition (a-multi) is known in the classified
+low-dimensional cases but is open in general.  The following reduction localizes
+its entire higher-degree content in degree four.
+
+\begin{definition}
+A form $f\in\Sym^m\C^d$, $m\ge3$, is \emph{certified} if there is a nonzero
+multilinear form
+\[
+ P_f:(\C^d)^{m-2}\to\C
+\]
+such that $\det H_f=P_f^d$ identically in the polarization variables.
+By \cite[Theorem~2(c)]{GO25}, certified and persistent are equivalent in the
+present setting.
+\end{definition}
+
+\begin{theorem}[Veronese contraction lemma]\label{thm:veronese}
+Fix $d$.  Suppose every certified quartic in $\Sym^4\C^d$ satisfies
+(a-multi).  Then every certified form in $\Sym^m\C^d$, for every $m\ge3$,
+satisfies (a-multi).
+\end{theorem}
+
+\begin{proof}
+We induct on $m$.  The case $m=3$ is immediate because the certificate has one
+slot; $m=4$ is the hypothesis.  Assume $m\ge5$, set $r=m-2\ge3$, and write
+$P=P_f$.
+
+Define the linear contraction map
+\[
+ \Phi:V\longrightarrow(V^*)^{\otimes(r-1)},\qquad
+ \Phi(u)=\iota_uP=P(u,-,\ldots,-).
+\]
+Its kernel $K$ is a proper linear subspace because $P\neq0$.  For
+$u\notin K$, commutativity of directional derivatives gives the exact matrix
+identity
+\[
+ H_{\partial_u f}(v_2,\ldots,v_r)=H_f(u,v_2,\ldots,v_r).
+\]
+Hence $\partial_u f$ is certified and its certificate root is, up to a scalar
+$d$-th root of unity, $\Phi(u)$.  By induction,
+\begin{equation}\label{eq:Phi-veronese}
+ \Phi(u)=c_u\,\ell_u^{\otimes(r-1)},\qquad u\notin K,
+\end{equation}
+for some $c_u\neq0$ and $\ell_u\neq0$.
+
+We claim that all $\ell_u$ in \eqref{eq:Phi-veronese} are proportional.
+Otherwise choose $u_1,u_2\notin K$ with independent $\ell_1,\ell_2$.
+The affine line $u_1+t u_2$ meets the linear subspace $K$ in at most one point,
+so choose $t\neq0$ with $u_t=u_1+t u_2\notin K$.  By linearity of $\Phi$,
+\[
+ c_t\ell_t^{\otimes p}
+ =c_1\ell_1^{\otimes p}+t c_2\ell_2^{\otimes p},
+ \qquad p=r-1\ge2.
+\]
+Restricting to the diagonal gives
+\[
+ a\ell_1(x)^p+b\ell_2(x)^p=e\ell(x)^p,
+ \qquad abe\neq0.
+\]
+After absorbing $p$-th roots of $a,b$, the left side is $X^p+Y^p$ for
+independent linear forms $X,Y$.  Over $\C$ this factors into $p\ge2$ distinct,
+pairwise nonproportional linear factors, whereas the right side is a pure
+$p$-th power.  Unique factorization gives a contradiction.
+
+Thus the image of $\Phi$ is contained in the one-dimensional space
+$\C\ell^{\otimes(r-1)}$ for a fixed $\ell$.  Since $V\setminus K$ spans $V$,
+there is a linear form $c\in V^*$ with
+\begin{equation}\label{eq:P-c-ell}
+ P(u,v_2,\ldots,v_r)
+ =c(u)\ell(v_2)\cdots\ell(v_r)
+\end{equation}
+for all arguments.
+
+It remains to identify $c$ with $\ell$.  The determinant $\det H_f$ is symmetric
+in the $r$ polarization slots, so for every $\sigma\in S_r$,
+$(P\circ\sigma)^d=P^d$.  Since the polynomial ring is an integral domain,
+$P\circ\sigma=\chi(\sigma)P$ for a character
+$\chi:S_r\to\mu_d$.  Hence $P$ is either symmetric or alternating.  If it were
+alternating, then $\iota_uP$ would be alternating in its $r-1\ge2$ remaining
+slots, while \eqref{eq:P-c-ell} makes it symmetric; all contractions would
+vanish, contradicting $P\neq0$.  Thus $P$ is symmetric.  Swapping the first two
+slots in \eqref{eq:P-c-ell} gives
+\[
+ c(u)\ell(v)=c(v)\ell(u),
+\]
+so $c=\gamma\ell$ for some $\gamma\neq0$.  Therefore
+$P=\gamma\ell^{\otimes r}$, which is (a-multi).
+\end{proof}
+
+\begin{remark}[The quartic base case]
+The proof fails exactly at $r=2$: then $p=r-1=1$, and the degree-one Veronese
+contains lines.  Moreover the alternating possibility is not eliminated by the
+last contraction argument.  Thus the remaining base problem is genuinely:
+for a certified quartic, prove that the bilinear certificate $P_f$ is symmetric
+of rank one (and in particular not alternating).  This is not supplied by the
+current low-dimensional classification for arbitrary $d\ge4$.
+\end{remark}
+
+\section{Exact symbolic evidence}\label{sec:computations}
+
+The preceding results arose from exact symbolic experiments designed to test
+possible repairs rather than merely to resample the Segre-restricted identity.
+All arithmetic was over $\mathbb Q$ using SymPy; no floating-point tests were
+used.  For each certified form, an admissible diagonal base was chosen when
+available, the space $\Nsp_f$ was generated from all basis tuples, reduced to an
+exact linear basis, and the following gates were checked:
+\[
+ \text{(TR)},\qquad
+ \text{(JC)},\qquad
+ \dim\bigcap_{N\in\Nsp_f}\ker N>0.
+\]
+Jordan closure was tested by exact rank membership for every unordered pair of
+a reduced basis of $\Nsp_f$.
+
+The corpus contained:
+\begin{itemize}[leftmargin=2em]
+\item ten named normal forms, including the binary $W_n$ family, the ternary
+      normal forms, the classified persistent cubics in dimension four, and the
+      quartic $x_0x_2^3+x_1x_2^2x_3+x_3^4$ from \cite[Example~28]{GO25};
+\item all 156 certificate-passing forms found among the
+      $\binom{35}{1}+\binom{35}{2}+\binom{35}{3}=7175$ coefficient-one sums of
+      at most three distinct quartic monomials in four variables;
+\item 151 accumulated certificate-passing quintics in four variables from the
+      analogous partial search; and
+\item four Kronecker products whose normalized Hessian spaces were constructed
+      directly from the product tensor, including product dimensions
+      $4,6,8,$ and $9$.
+\end{itemize}
+One named quartic is also present in the 156-form hunt, so these data comprise
+321 gate executions but 320 distinct literal polynomial inputs before any
+$\mathrm{GL}$-orbit reduction.  After literal deduplication, 2204 unordered
+Jordan-pair membership tests remain.  No Jordan-closure failure was observed.
+
+The negative controls were informative.  Six symmetric but nonpersistent forms
+failed (JC) in every case.  The strictly triangular space
+$\Span\{E_{12},E_{23}\}$ shows that simultaneous triangularizability does not
+imply Jordan closure, since
+\[
+ E_{12}E_{23}+E_{23}E_{12}=E_{13}\notin
+ \Span\{E_{12},E_{23}\}.
+\]
+Conversely, a certificate-satisfying bilinear toy family that is not the
+polarized Hessian of a symmetric tensor passes (JC) but fails (TR); thus (JC)
+alone is not sufficient.
+
+A further empirical regularity is
+\begin{equation}\label{eq:dim-observation}
+ \dim\Nsp_f\in\{d-1,d\}
+\end{equation}
+for every distinct tested persistent input, even when $r\ge2$ and the a priori
+spanning set has size $d^r$.  No proof of \eqref{eq:dim-observation} is known to
+us.
+
+There are important sampling limitations.  The quartic sweep uses coefficient
+one only, the quintic block is partial, no $d=5$ hunt was completed, and the
+known examples are heavily biased toward the fixed-linear-form condition.  The
+computations should therefore be read as evidence for structural conjectures,
+not as a substitute for proof.  Ancillary scripts and exact outputs will
+accompany a public version of this note.
+
+\section{Open problems and status of Kronecker closure}
+
+The following problems now appear to isolate the main missing structure.
+
+\begin{question}\label{q:persist-jc}
+Does persistence imply (TR)+(JC) for a normalized polarized-Hessian space at
+some admissible base?
+\end{question}
+
+By \cref{thm:jacobson}, a positive answer implies simultaneous strict
+triangularizability and therefore supplies the matrix-space input to the
+Kronecker repair.
+
+\begin{question}[Quartic rank-one problem]\label{q:quartic}
+If $f\in\Sym^4\C^d$ is certified and
+\[
+ \det H_f(u,v)=P_f(u,v)^d,
+\]
+must $P_f$ be a symmetric bilinear form of rank one?
+\end{question}
+
+A positive answer for each fixed $d$ implies, by \cref{thm:veronese}, the
+fixed-linear-form condition in every degree in that dimension.
+
+\begin{question}\label{q:dimN}
+For a persistent symmetric tensor, is $\dim\Nsp_f\le d$?  More strongly, under
+natural nondegeneracy hypotheses, must $\dim\Nsp_f\in\{d-1,d\}$?
+\end{question}
+
+There is also a direct route that bypasses normalized-Hessian triangularization.
+Let
+\[
+ R_{f,g}(U)=\det H_{f\boxt g}(U)-P_{f\boxt g}(U)^D.
+\]
+The decomposable calculation shows that $R_{f,g}$ lies in the appropriate sum
+of Segre ideals after restriction in each polarization slot.  A direct proof of
+Kronecker closure could instead show that the persistence/Hessian relations on
+$f$ and $g$ force every non-Cartan Cauchy component of $R_{f,g}$ to vanish.
+This is an ideal-membership or syzygy problem rather than a density argument.
+
+To summarize: the proof of \cite[Proposition~10]{G26} requires an additional
+global argument, but the general closure theorem remains plausible.  The
+results above establish it in substantial unconditional subcases and replace
+the Segre-to-global step by explicit algebraic conditions whose general validity
+can be attacked independently.
+
+\section*{A note on process}
+Learned Response Labs is a research collaboration between Adam Guetz and AI
+systems (primarily ChatGPT and Claude).  This note originated in a reading of
+Gharahi's preprint \cite{G26}; the gap analysis, the repair mathematics, the
+drafting of this text, and the verification code were primarily generated by
+AI systems (OpenAI GPT and Anthropic Claude) operating adversarially: results
+produced by one system were independently rederived and hostilely audited by
+another before internal acceptance, and every computation is exact rational
+arithmetic reproducible from the ancillary bundle.  Adam designed and directed
+the research program and made the circulation decision but did not perform
+mathematical verification; no human has.  Accordingly, the results are offered
+as \emph{proof candidates pending external review}, and no claim in this note
+should be treated as established until that review has occurred.
+
+\section*{Acknowledgments}
+The starting point for this note is Masoud Gharahi's preprint \cite{G26} and the
+Hessian characterization developed with Giorgio Ottaviani in \cite{GO25}.  I am
+grateful for the clarity of those formulations, which makes the obstruction and
+the matrix-space alternatives unusually explicit.  This is a preliminary note;
+comments and corrections are welcome.
+
+\begin{thebibliography}{99}
+
+\bibitem{G26}
+M.~Gharahi,
+\emph{Kronecker Products of Symmetric Persistent Tensors},
+arXiv:2608.11182v1, 2026.
+
+\bibitem{GO25}
+M.~Gharahi and G.~Ottaviani,
+\emph{Symmetric Persistent Tensors and their Hessian},
+arXiv:2510.07404v1, 2025.
+
+\bibitem{GL24}
+M.~Gharahi and V.~Lysikov,
+\emph{Persistent Tensors and Multiqudit Entanglement Transformation},
+Quantum \textbf{8} (2024), 1238.
+
+\bibitem{J52}
+N.~Jacobson,
+\emph{Une g\'en\'eralisation du th\'eor\`eme d'Engel},
+C. R. Acad. Sci. Paris \textbf{234} (1952), 679--681.
+
+\bibitem{J62}
+N.~Jacobson,
+\emph{Lie Algebras},
+Interscience Tracts in Pure and Applied Mathematics, No.~10,
+Interscience Publishers, New York--London, 1962.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,316 @@
+
+### scan d=4 n=4: 35 monomials, supports of size <= 3
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**3*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1**2 + x0**2*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1**2 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1**2 + x0**2*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1**2 + x0**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**2 + x0*x1**2*x2 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**2 + x0*x1**2*x3 + x1**3*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**2 + x1**3*x3 + x1**2*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**2 + x1**3*x2 + x1**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x2 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x0**2*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x1*x2 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**3*x3 + x0**2*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**3*x3 + x0**2*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0**3*x3 + x0**2*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x0*x1**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x0*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x1**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0**2*x1*x2 + x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x1*x3 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3 + x0**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**3*x2 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**3*x3 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0**3*x2 + x0**2*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3 + x0*x1**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3 + x0*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3 + x1**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0**2*x1*x3 + x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2**2 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2**2 + x0**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**2 + x0*x1*x2**2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**2 + x0*x2**2*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**2 + x1**2*x2**2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**2 + x1*x2**3 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2*x3 + x0**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**3*x2 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**3*x3 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0**3*x1 + x0**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2*x3 + x0*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2*x3 + x0*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2*x3 + x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0**2*x2*x3 + x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**2 + x0*x1*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**2 + x0*x2*x3**2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**2 + x1**2*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**2 + x1*x3**3 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0*x1**2*x2 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1 + x0*x1**2*x3 + x1**3*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0*x1*x2**2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2 + x0*x2**2*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0*x1*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3 + x0*x2*x3**2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0*x1**2*x2 + x1**3*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0*x1**2*x3 + x1**3*x2   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0*x1*x2**2 + x2**3*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0*x1*x3**2 + x2*x3**3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0*x2**2*x3 + x1*x2**3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4 + x0*x2*x3**2 + x1*x3**3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x0*x1**2*x3 + x1**3*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x0*x1**2*x3 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x0*x1**2*x2 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x0*x1**2*x2 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**3*x3 + x1**2*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**3*x3 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**3*x2 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**4 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**3*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x2 + x1**3*x3 + x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x0*x1**2*x3 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x0*x1**2*x3 + x1**3*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**3*x2 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**3*x2 + x1**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**3*x2 + x1**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**4 + x1**3*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**3*x2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**2*x3 + x1**3*x2 + x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2**2 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2**2 + x1**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2*x3 + x1**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**3*x2 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**3*x3 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**4 + x1**2*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2*x3 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2*x3 + x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**3 + x1**2*x2*x3 + x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x0*x2**2*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x0*x2**2*x3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x0*x2**3 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x0*x2**3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x1**2*x2**2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x1**3*x2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x1**4 + x2**3*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x1*x2**2*x3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x1*x2**3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**2 + x2**4 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x0*x2*x3**2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x0*x2*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x0*x3**3 + x1*x2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x0*x3**3 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x1**2*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x1**3*x3 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x1**4 + x2*x3**3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x1*x2*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x1*x3**3 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**2 + x2*x3**3 + x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x0*x2**2*x3 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x0*x2**2*x3 + x1*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3 + x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**2*x3 + x1*x2**3 + x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1**2*x2**2 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1**2*x2**2 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1**3*x2 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1**4 + x1*x2**2*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**3 + x1*x2**2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**2*x3 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**2*x3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**2*x3 + x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**2*x3 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3 + x1*x2**2*x3 + x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x0*x3**3 + x1*x2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x0*x3**3 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x2*x3**2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x3**3 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x3**3 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x3**3 + x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x3**3 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**2 + x1*x3**3 + x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1**2*x3**2 + x1*x2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1**2*x3**2 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1**3*x3 + x1*x2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1**4 + x1*x2*x3**2   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2 + x1*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2 + x2**2*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2 + x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2 + x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2 + x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**3 + x1*x2*x3**2 + x3**4   dimNsp=3 Nil=True T=True
+   scanned 7175 forms, 156 passed the persistence certificate
+
+### scan d=4 n=5: 56 monomials, supports of size <= 3
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x1*x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2*x3**3 + x1*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x3**4 + x1*x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0**2*x1**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x0**2*x1**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**3 + x0*x1**3*x2 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**3 + x0*x1**3*x3 + x1**4*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**3 + x1**4*x3 + x1**3*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x1**3 + x1**4*x2 + x1**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0**2*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x0**2*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**3 + x0*x1*x2**3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**3 + x0*x2**3*x3 + x1*x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**3 + x1**2*x2**3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x2**3 + x1*x2**4 + x2**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x0**2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x0**2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**3 + x0*x1*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**3 + x0*x2*x3**3 + x1*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**3 + x1**2*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**2*x3**3 + x1*x3**4 + x2**2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1**2 + x0**3*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1**2 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1**2 + x0**3*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1**2 + x0**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1**2 + x0*x1**3*x2 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x1**2 + x0*x1**3*x3 + x1**4*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x2 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0**3*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x1*x2 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**4*x3 + x0**3*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**4*x3 + x0**3*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0**4*x3 + x0**3*x1*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0*x1**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x0*x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x1**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0**3*x1*x2 + x2**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x1*x3 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x0**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**4*x2 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**4*x3 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0**4*x2 + x0**3*x1*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x0*x1**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x0*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x1**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0**3*x1*x3 + x3**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2**2 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2**2 + x0**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2**2 + x0*x1*x2**3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x2**2 + x0*x2**3*x3 + x1*x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x0**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**4*x2 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**4*x3 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0**4*x1 + x0**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x0*x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x0*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x2**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0**3*x2*x3 + x3**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**3*x3**2 + x0*x1*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**3*x3**2 + x0*x2*x3**3 + x1*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0*x1**3*x2 + x1**4*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x1 + x0*x1**3*x3 + x1**4*x2   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0*x1*x2**3 + x2**4*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x2 + x0*x2**3*x3 + x1*x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0*x1*x3**3 + x2*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**4*x3 + x0*x2*x3**3 + x1*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0*x1**3*x2 + x1**4*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0*x1**3*x3 + x1**4*x2   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0*x1*x2**3 + x2**4*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0*x1*x3**3 + x2*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0*x2**3*x3 + x1*x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0**5 + x0*x2*x3**3 + x1*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x0*x1**3*x3 + x1**4*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x0*x1**3*x3 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x0*x1**3*x2 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x0*x1**3*x2 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x3 + x1**2*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x3 + x1**3*x2**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x3 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x2 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**5 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x3 + x1*x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x2 + x1**4*x3 + x2**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x0*x1**3*x3 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x0*x1**3*x3 + x1**4*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2 + x1**2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2 + x1**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2 + x1**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**5 + x1**4*x2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2 + x1*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**3*x3 + x1**4*x2 + x3**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x1**2*x2**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x1**2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2**2 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2**2 + x1**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x1**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**4*x2 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**4*x3 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**5 + x1**3*x2*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x1*x2**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x1*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x2**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1**4 + x1**3*x2*x3 + x3**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x0*x2**3*x3 + x1*x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x0*x2**3*x3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x0*x2**4 + x1*x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x0*x2**4 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x1**2*x2**3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x1**3*x2**2 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x1**4*x2 + x2**4*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x1**5 + x2**4*x3   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x1*x2**3*x3 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x1*x2**4 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x2**3 + x2**5 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x0*x2*x3**3 + x1*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x0*x2*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x0*x3**4 + x1*x2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x0*x3**4 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x1**2*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x1**3*x3**2 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x1**4*x3 + x2*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x1**5 + x2*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x1*x2*x3**3 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x1*x3**4 + x2*x3**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x1*x3**3 + x2*x3**4 + x3**5   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x0*x2**3*x3 + x1*x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x0*x2**3*x3 + x1*x2**4   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x1*x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x2**2*x3**3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x2**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x2**4*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x2**5   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x2*x3**4   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x2**3*x3 + x1*x2**4 + x3**5   dimNsp=4 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x1**2*x2**3 + x1*x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x1**2*x2**3 + x2**3*x3**2   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x1**3*x2**2 + x1*x2**3*x3   dimNsp=3 Nil=True T=True
+   PERSISTENT: f = x0*x2**4 + x1**4*x2 + x1*x2**3*x3   dimNsp=4 Nil=True T=True
+[SNAPSHOT 2026-08-17T18:11:08Z.  The (d,n)=(4,4) block is COMPLETE: 7175 forms scanned,
+156 passed the full persistence certificate, ALL with Nil=True and T=True, 0 failures.
+The (4,5) block (r=3) was still running: 151 persistent so far, all Nil=True T=True.
+The (5,4) block had not started.  out_hunt.txt continues and is authoritative when complete.]

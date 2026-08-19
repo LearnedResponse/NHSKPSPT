@@ -1,0 +1,10 @@
+
+### F3_4 box F3_4  n=4 d1=3 d2=3 D=9 r=2
+  ranks=[3, 3]  expansion terms=9  LHS=884736  RHS=884736  MATCH=True
+  ranks=[3, 3]  expansion terms=9  LHS=-231928233984  RHS=-231928233984  MATCH=True
+  ranks=[3, 3]  expansion terms=9  LHS=-884736  RHS=-884736  MATCH=True
+  ranks=[2, 3]  expansion terms=9  LHS=-34012224  RHS=-34012224  MATCH=True
+
+### F3_4 box GOEx28  n=4 d1=3 d2=4 D=12 r=2
+  ranks=[3, 3]  expansion terms=9  LHS=0  RHS=0  MATCH=True
+  ranks=[3, 3]  expansion terms=9  LHS=9895604649984  RHS=9895604649984  MATCH=True

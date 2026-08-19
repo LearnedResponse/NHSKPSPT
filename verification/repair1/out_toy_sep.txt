@@ -1,0 +1,25 @@
+H(u,v) = [[u0*v0, u0*v1/2 + u1*v0/2], [u0*v1/2 + u1*v0/2, u1*v1]]    (symmetric in the two slots u<->v:  True )
+det H(u,v) = -(u0*v1 - u1*v0)**2/4
+P(u,v) = I*(u0*v1 - u1*v0)/2   multilinear, and det H - P^2 = 0
+
+base B=(e0,e1):  H(B) = [[0, 1/2], [1/2, 0]]  det = -1/4  P(B) = I/2
+
+M(A) = H(B)^-1 H(A) = [[u0*v1 + u1*v0, 2*u1*v1], [2*u0*v0, u0*v1 + u1*v0]]
+lambda(A) = P(A)/P(B) = u0*v1 - u1*v0
+charpoly M(A) = t**2 - 2*t*u0*v1 - 2*t*u1*v0 + u0**2*v1**2 - 2*u0*u1*v0*v1 + u1**2*v0**2
+(t - lambda)^2  = t**2 - 2*t*u0*v1 + 2*t*u1*v0 + u0**2*v1**2 - 2*u0*u1*v0*v1 + u1**2*v0**2
+DIFFERENCE     = -4*t*u1*v0
+=> single-eigenvalue for ARBITRARY tuples: False
+det M(A) - lambda^2 = 0   (so the DETERMINANT half of the certificate does hold)
+
+-- explicit witness --
+  A=(e0,e0): M=[[0, 0], [2, 0]] lambda=0 N=[[0, 0], [2, 0]] eigs(M)=[0] N nilpotent=True
+  A=(e1,e1): M=[[0, 2], [0, 0]] lambda=0 N=[[0, 2], [0, 0]] eigs(M)=[0] N nilpotent=True
+  A=((1,1),(1,1)): M=[[2, 2], [2, 2]] lambda=0 N=[[2, 2], [2, 2]] eigs(M)=[0, 4] N nilpotent=False
+
+N(e0,e0) = [[0, 0], [2, 0]]  N(e1,e1) = [[0, 2], [0, 0]]  both nilpotent, but N1+N2 = [[0, 2], [2, 0]]  eigenvalues [-2, 2]
+=> Nil (span nilpotent) FAILS for this formal family.
+
+CONCLUSION: 'certificate + multilinearity' does NOT formally imply either
+  (single eigenvalue at arbitrary tuples) or (Nil).  Step 2 is strictly
+  weaker than what Step 3 consumes whenever r = n-2 >= 2.

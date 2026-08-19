@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this verification bundle, please cite both the software record and the accompanying paper note."
+title: "Ancillary verification code for: Normalized Hessian Spaces and Kronecker Products of Symmetric Persistent Tensors"
+authors:
+  - family-names: Guetz
+    given-names: Adam
+    orcid: "https://orcid.org/0000-0003-0105-4628"
+type: software
+# doi: <ZENODO SOFTWARE DOI - fill after first publish>
+# preferred-citation: the paper note record - fill its DOI after publish
+keywords:
+  - persistent tensors
+  - Kronecker product
+  - symmetric tensors
+  - Hessian
+  - Jordan algebras
+  - exact symbolic computation
+  - SymPy
+license: Apache-2.0

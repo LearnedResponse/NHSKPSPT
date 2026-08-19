@@ -1,0 +1,24 @@
+f = x0**2*(x0*x2 + x1**2)
+g = y0**2*(y0*y2 + y1**2)
+n=4 r=2 d1=3 d2=3 D=9
+
+certificate f: det H_f = (-144)*(v0_0*v1_0)^3
+certificate g: det H_g = (-144)*(v0_0*v1_0)^3
+H_f(base) = [[0, 0, 6], [0, 4, 0], [6, 0, 0]]  det = -144
+
+h = f box g has 9 monomials in Sym^4(C^9)
+U1 = [[2, 1, -1], [0, 3, 1], [1, -2, 2]] rank 3
+U2 = [[1, 0, 2], [-1, 3, 0], [2, 1, -3]] rank 3
+
+det H_h(U1,U2) = 1728
+
+L1  H_h(U1,U2) == (1/n!) sum_k H_f (x) H_g : True
+L2  M_h(U) == sum_k M_f (x) M_g            : True
+L3  lambda_h = sum lambda*mu               : True    (value 2)
+L4  N_h strictly upper triangular in lex   : True   (=> T(h) holds, nilpotent: True )
+L5  det(sum M_f (x) M_g) == det(Y)^d1      : True
+    Y - lambda_h I nilpotent (in Nsp(g))   : True   det Y = 8  lambda_h^d2 = 8
+
+L6  det H_h(U1,U2)              = 1728
+    [P_h(U1,U2)]^D               = 1728
+    THEOREM HOLDS AT THIS POINT  : True

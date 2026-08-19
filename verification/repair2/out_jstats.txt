@@ -1,0 +1,37 @@
+==============================================================================
+PART 3b SUPPORT -- self-adjointness, trace form, squaring-closure, and the
+                  exact equation count behind each JC pass
+==============================================================================
+
+--- ten named forms ---
+  W_3 = x0^2*x1                          d=2 r=1 dimN=1 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=2 pairs=1 equations=1
+      generic X = sum c_k N_k  =>  X^2 = [0] . (N_1..N_1)
+  W_4 = x0^3*x1                          d=2 r=2 dimN=1 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=2 pairs=1 equations=1
+      generic X = sum c_k N_k  =>  X^2 = [0] . (N_1..N_1)
+  W_5 = x0^4*x1                          d=2 r=3 dimN=1 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=2 pairs=1 equations=1
+      generic X = sum c_k N_k  =>  X^2 = [0] . (N_1..N_1)
+  W_6 = x0^5*x1                          d=2 r=4 dimN=1 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=2 pairs=1 equations=1
+      generic X = sum c_k N_k  =>  X^2 = [0] . (N_1..N_1)
+  F3_3 = x0^1(x0*x2+x1^2)                d=3 r=1 dimN=2 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=5 pairs=3 equations=9
+      generic X = sum c_k N_k  =>  X^2 = [0, c0**2] . (N_1..N_2)
+  F3_4 = x0^2(x0*x2+x1^2)                d=3 r=2 dimN=2 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=5 pairs=3 equations=9
+      generic X = sum c_k N_k  =>  X^2 = [0, 2*c0**2/3] . (N_1..N_2)
+  F3_5 = x0^3(x0*x2+x1^2)                d=3 r=3 dimN=2 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=5 pairs=3 equations=9
+      generic X = sum c_k N_k  =>  X^2 = [0, c0**2/2] . (N_1..N_2)
+  CC = x0^2x3+x0x1x2+x1^3                d=4 r=1 dimN=3 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=9 pairs=6 equations=36
+      generic X = sum c_k N_k  =>  X^2 = [0, 6*c0**2, c0*c1] . (N_1..N_3)
+  QT = x0^2x3+x0x1x2                     d=4 r=1 dimN=3 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=9 pairs=6 equations=36
+      generic X = sum c_k N_k  =>  X^2 = [0, 0, c0*c1] . (N_1..N_3)
+  GOEx28 = x0x2^3+x1x2^2x3+x3^4          d=4 r=2 dimN=4 G-self-adjoint=True traceform=0:True squaring-closed(generic)=True  dim S=9 pairs=10 equations=50
+      generic X = sum c_k N_k  =>  X^2 = [0, 6*c0*c2, c0*c3, 0] . (N_1..N_4)
+  named-form equation total: 153
+
+--- equation count for the hunt blocks (from the recorded dim N_f) ---
+  (d,n)=(4, 4): 156 forms, dim N distribution {3: 132, 4: 24}, dim S=9; equations = 132*(6*(9-3)) + 24*(10*(9-4)) = 5952
+  (d,n)=(4, 5): 151 forms, dim N distribution {3: 112, 4: 39}, dim S=9; equations = 112*(6*(9-3)) + 39*(10*(9-4)) = 5982
+
+--- Kronecker products (dim N_h from out_kron_gates.txt) ---
+  W_4 x W_4      D=4 dimN=3 dim S=9 pairs=6 equations=36
+  F3_4 x W_4     D=6 dimN=5 dim S=20 pairs=15 equations=225
+  W_3 x CC       D=8 dimN=7 dim S=35 pairs=28 equations=784
+  F3_4 x F3_4    D=9 dimN=8 dim S=44 pairs=36 equations=1296

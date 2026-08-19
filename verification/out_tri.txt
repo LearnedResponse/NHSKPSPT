@@ -1,0 +1,33 @@
+
+### W_3 = x0^2 x1 (d=2)
+  Hess(f) = -4*x0**2
+  ell_f = x0   lambda = -4
+  dim ker ell = 1
+   N = [[0, 0], [1, 0]]  nilpotent: True
+  associative algebra nilpotent (=> simultaneously STRICTLY triangularizable): True (vanishes at word length 2)
+
+### C3 = x0^2 x2 + x0 x1^2 (d=3)
+  Hess(f) = -8*x0**3
+  ell_f = x0   lambda = -8
+  dim ker ell = 2
+   N = [[0, 0, 0], [1, 0, 0], [0, 1, 0]]  nilpotent: True
+   N = [[0, 0, 0], [0, 0, 0], [1, 0, 0]]  nilpotent: True
+  associative algebra nilpotent (=> simultaneously STRICTLY triangularizable): True (vanishes at word length 3)
+
+### Chasles-Cayley x0^2x3+x0x1x2+x1^3 (d=4)
+  Hess(f) = 4*x0**4
+  ell_f = x0   lambda = 4
+  dim ker ell = 3
+   N = [[0, 0, 0, 0], [1, 0, 0, 0], [0, 6, 0, 0], [0, 0, 1/2, 0]]  nilpotent: True
+   N = [[0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0], [0, 1/2, 0, 0]]  nilpotent: True
+   N = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]]  nilpotent: True
+  associative algebra nilpotent (=> simultaneously STRICTLY triangularizable): True (vanishes at word length 4)
+
+### quadric+tangent plane x0^2x3+x0x1x2 (d=4)
+  Hess(f) = 4*x0**4
+  ell_f = x0   lambda = 4
+  dim ker ell = 3
+   N = [[0, 0, 0, 0], [1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1/2, 0]]  nilpotent: True
+   N = [[0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0], [0, 1/2, 0, 0]]  nilpotent: True
+   N = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]]  nilpotent: True
+  associative algebra nilpotent (=> simultaneously STRICTLY triangularizable): True (vanishes at word length 3)

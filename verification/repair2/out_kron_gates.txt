@@ -1,0 +1,44 @@
+==============================================================================
+PART 2(d)  TR / JC / CK on the Kronecker products, built from h directly
+==============================================================================
+
+### W_4 x W_4      (Sym^4 C^4)   n=4  d1=2 d2=2  D=4  r=2
+    h has 2 monomials in 4 variables
+    [SYM] full symbolic certificate for h : OK   (base z_00, dim N_h = 3)
+    [DEC] lambda from P_h on decomposables; pointwise charpoly(M_h(I)) == (t-lambda)^4 at all 16 basis tuples : True
+    [SYM] vs [DEC]: same N-space True; identical lambdas True
+    dim N_h = 3   TR=True  JC=True  CK=True (dim 1)   Nil=True  T=True   [route SYM]
+    Jordan pairs tested: 6
+
+### F3_4 x W_4     (Sym^4 C^6)   n=4  d1=3 d2=2  D=6  r=2
+    h has 4 monomials in 6 variables
+    [SYM] full symbolic certificate for h : OK   (base z_00, dim N_h = 5)
+    [DEC] lambda from P_h on decomposables; pointwise charpoly(M_h(I)) == (t-lambda)^6 at all 36 basis tuples : True
+    [SYM] vs [DEC]: same N-space True; identical lambdas True
+    dim N_h = 5   TR=True  JC=True  CK=True (dim 1)   Nil=True  T=True   [route SYM]
+    Jordan pairs tested: 15
+
+### W_3 x CC       (Sym^3 C^8)   n=3  d1=2 d2=4  D=8  r=1
+    h has 6 monomials in 8 variables
+    [SYM] full symbolic certificate for h : OK   (base z_00, dim N_h = 7)
+    [DEC] lambda from P_h on decomposables; pointwise charpoly(M_h(I)) == (t-lambda)^8 at all 8 basis tuples : True
+    [SYM] vs [DEC]: same N-space True; identical lambdas True
+    dim N_h = 7   TR=True  JC=True  CK=True (dim 1)   Nil=True  T=True   [route SYM]
+    Jordan pairs tested: 28
+
+### F3_4 x F3_4    (Sym^4 C^9)   n=4  d1=3 d2=3  D=9  r=2
+    h has 9 monomials in 9 variables
+    [SYM] full symbolic certificate for h : TIMEOUT at 600s -- using [DEC]
+    [DEC] lambda from P_h on decomposables; pointwise charpoly(M_h(I)) == (t-lambda)^9 at all 81 basis tuples : True
+    dim N_h = 8   TR=True  JC=True  CK=True (dim 1)   Nil=True  T=True   [route DEC]
+    Jordan pairs tested: 36
+
+
+=========== SUMMARY (d) ===========
+product                         n  D  r dimN pairs    TR    JC    CK   Nil     T route
+W_4 x W_4      (Sym^4 C^4)      4  4  2    3     6  True  True  True  True  True   SYM
+F3_4 x W_4     (Sym^4 C^6)      4  6  2    5    15  True  True  True  True  True   SYM
+W_3 x CC       (Sym^3 C^8)      3  8  1    7    28  True  True  True  True  True   SYM
+F3_4 x F3_4    (Sym^4 C^9)      4  9  2    8    36  True  True  True  True  True   DEC
+
+TALLY (d): 4 products; TR 4/4; JC 4/4; CK 4/4; Jordan pairs tested 85

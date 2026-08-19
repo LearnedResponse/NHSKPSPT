@@ -1,0 +1,8 @@
+P_f ~ v0_0*v1_0    (product of linear forms in each slot => GO condition (a))
+P_g ~ v0_2*v1_2
+det H_f(B)= -144  det H_g(B')= 144
+  trial 0: ranks=[3, 3]  Y==M_g(W): True  lambda_g(W)==sum(lambda*mu): True  det Y == (sum lambda*mu)^d2: True
+  trial 1: ranks=[3, 3]  Y==M_g(W): True  lambda_g(W)==sum(lambda*mu): True  det Y == (sum lambda*mu)^d2: True
+  trial 2: ranks=[3, 3]  Y==M_g(W): True  lambda_g(W)==sum(lambda*mu): True  det Y == (sum lambda*mu)^d2: True
+  trial 3: ranks=[3, 3]  Y==M_g(W): True  lambda_g(W)==sum(lambda*mu): True  det Y == (sum lambda*mu)^d2: True
+CONTRACTION LEMMA holds on all trials: True

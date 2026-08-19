@@ -1,0 +1,9 @@
+f=x0**4*x1  g=y0**3*(y0*y2 + y1**2)  n=5 r=3 d1=2 d2=3 D=6
+P_f ~ v0_0*v1_0*v2_0  c_f = -576
+P_g ~ v0_0*v1_0*v2_0  c_g = -6912
+det H_f(B)= -576  det H_g(B')= -6912
+h has 4 monomials in Sym^5(C^6)
+  trial 0: ranks=[2, 2, 2] terms=8  L1(expansion)=True  LHS=-2229025112064/15625 RHS=-2229025112064/15625 THEOREM=True
+  trial 1: ranks=[2, 2, 2] terms=8  L1(expansion)=True  LHS=-142657607172096/15625 RHS=-142657607172096/15625 THEOREM=True
+  trial 2: ranks=[2, 2, 2] terms=8  L1(expansion)=True  LHS=-34828517376/15625 RHS=-34828517376/15625 THEOREM=True
+  trial 3: ranks=[2, 2, 2] terms=8  L1(expansion)=True  LHS=-34828517376/15625 RHS=-34828517376/15625 THEOREM=True

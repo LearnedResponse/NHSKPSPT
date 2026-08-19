@@ -1,0 +1,39 @@
+==============================================================================
+PART 2  NEGATIVE CONTROLS  (is the JC gate non-vacuous?)
+==============================================================================
+
+### (C1) repair1 toy counter-family, r=2, d=2
+    det H(u,v) = -(v0_0*v1_1 - v0_1*v1_0)**2/4   (= -(Q/2)^2, so the GO certificate holds with d=2)
+    base (e0,e1) [NOT diagonal];  dim Nsp = 3
+      N_1 = [[1, 0], [0, 1]]
+      N_2 = [[0, 1], [0, 0]]
+      N_3 = [[0, 0], [1, 0]]
+    TR=False  JC=True  CK=False(dim 0)  Nil=False  T=False
+
+### (C3) alternating-P diagnostic on the toy
+    det H(u,u) = 0   ->  diagonal base exists: False
+    gates.diagonal_base() returns: None
+    (P_toy is ALTERNATING; for a genuine persistent form every case in
+     Part 2 admitted a diagonal base, which certifies P_f is symmetric.)
+
+### (C2) symmetric but NOT persistent, lambda := tr(M)/d
+    Fermat cubic x0^3+x1^3+x2^3               : persistent=False  dimN= 2  TR(by construction)=True  JC=False  CK=False  Nil=False  T=False
+    x0^3+x1^2*x2 (d=3)                        : persistent=False  dimN= 2  TR(by construction)=True  JC=False  CK=False  Nil=False  T=False
+    generic cubic 1 (d=3)                     : persistent=False  dimN= 2  TR(by construction)=True  JC=False  CK=False  Nil=False  T=False
+    generic cubic 2 (d=4)                     : persistent=False  dimN= 3  TR(by construction)=True  JC=False  CK=False  Nil=False  T=False
+    Fermat quartic x0^4+x1^4+x2^4 (r=2)       : persistent=False  dimN= 2  TR(by construction)=True  JC=False  CK=False  Nil=False  T=False
+    generic quartic (d=3, r=2)                : persistent=False  dimN= 5  TR(by construction)=True  JC=False  CK=False  Nil=False  T=False
+
+### (C4) T does not imply JC: a strictly-upper-triangular space that is
+         NOT Jordan-closed  (so the JC passes are new information, not a
+         corollary of the T passes already banked in attempt 1)
+    span{E12,E23} (strictly upper, so T holds, trace 0, common kernel = <e1>):
+    E12 o E23 = [[0, 0, 1], [0, 0, 0], [0, 0, 0]]  in span: False
+    => TR and CK can hold, T can hold, and JC still FAIL.  JC is strictly
+       stronger than T + TR + CK on general matrix spaces.
+
+=========== CONTROL TALLY ===========
+    toy counter-family (certificate holds, not a genuine Hessian): {'TR': False, 'JC': True, 'CK': False, 'Nil': False, 'T': False, 'dimN': 3}
+      -> rejected by the gate CONJUNCTION (TR and CK fail); JC alone passes it,
+         so TR is load-bearing and JC alone is not the discriminator there.
+    non-persistent symmetric tensors tested: 6;  JC pass 0/6

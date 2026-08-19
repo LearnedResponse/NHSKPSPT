@@ -1,0 +1,69 @@
+======================================================================
+(A) CLOSURE: compute Nsp / Nil / T for actual Kronecker products
+======================================================================
+
+### W_4 box W_4 in Sym^4 C^4   (n=4, d=4)
+  r = n-2 = 2, d = 4
+  det H_f = (81/16) * (v0_0*v1_0)**4   [certificate OK]
+  base tuple = [['1', '0', '0', '0'], ['1', '0', '0', '0']]
+  dim Nsp(f) = 3
+    N = [[0, 0, 0, 0], [1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1, 0]]
+    N = [[0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0]]
+    N = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0]]
+  charpoly of generic element of Nsp: t**4
+  Nil(f)  [every element of span nilpotent] : True
+  T(f)    [simultaneously strictly triangularizable] : True (algebra dies at word length 3)
+
+### F3_4 box W_4 in Sym^4 C^6   (n=4, d=6)
+  r = n-2 = 2, d = 6
+  det H_f = (-81/16) * (v0_0*v1_0)**6   [certificate OK]
+  base tuple = [['1', '0', '0', '0', '0', '0'], ['1', '0', '0', '0', '0', '0']]
+  dim Nsp(f) = 5
+    N = [[0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0]]
+    N = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, 2/3, 0, 0, 0], [0, 0, 0, 2/3, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 2/3, 0, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0]]
+  charpoly of generic element of Nsp: t**6
+  Nil(f)  [every element of span nilpotent] : True
+  T(f)    [simultaneously strictly triangularizable] : True (algebra dies at word length 4)
+
+### W_3 box CC  in Sym^3 C^8   (n=3, d=8)
+  r = n-2 = 1, d = 8
+  det H_f = (16/6561) * (v0_0)**8   [certificate OK]
+  base tuple = [['1', '0', '0', '0', '0', '0', '0', '0']]
+  dim Nsp(f) = 7
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0], [0, 6, 0, 0, 0, 0, 0, 0], [0, 0, 1/2, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 6, 0, 0], [0, 0, 0, 0, 0, 0, 1/2, 0]]
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0], [0, 1/2, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 1/2, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0], [0, 6, 0, 0, 0, 0, 0, 0], [0, 0, 1/2, 0, 0, 0, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0], [0, 1/2, 0, 0, 0, 0, 0, 0]]
+    N = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0]]
+  charpoly of generic element of Nsp: t**8
+  Nil(f)  [every element of span nilpotent] : True
+  T(f)    [simultaneously strictly triangularizable] : True (algebra dies at word length 5)
+
+======================================================================
+(B) STEP-2 LEMMA (one-slot lines), symbolic, constants included:
+    det( t*H_f(B) - H_f(B with slot j replaced by a) )
+      = [ t*P_f(B) - P_f(B with slot j -> a) ]^d   and   det H_f(B)=P_f(B)^d
+    => charpoly( H_f(B)^-1 H_f(A) ) = (t - P_f(A)/P_f(B))^d  on one-slot lines
+======================================================================
+
+  W_5: d=2, r=3, det H_f(B)=-576, c*Q(B)^d=-576 -> equal: True
+    slot 0: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    slot 1: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    slot 2: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    ==> STEP 2 (one-slot) VERIFIED for W_5: True
+
+  F3_5: d=3, r=3, det H_f(B)=-6912, c*Q(B)^d=-6912 -> equal: True
+    slot 0: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    slot 1: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    slot 2: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    ==> STEP 2 (one-slot) VERIFIED for F3_5: True
+
+  GOEx28: d=4, r=2, det H_f(B)=144, c*Q(B)^d=144 -> equal: True
+    slot 0: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    slot 1: det(tH_B - H_A) == c*(tQ_B-Q_A)^d : True ; charpoly(M) == (t-lambda)^d : True
+    ==> STEP 2 (one-slot) VERIFIED for GOEx28: True
