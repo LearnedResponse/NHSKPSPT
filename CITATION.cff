@@ -6,7 +6,7 @@ authors:
     given-names: Adam
     orcid: "https://orcid.org/0000-0003-0105-4628"
 type: software
-# doi: <ZENODO SOFTWARE DOI - fill after first publish>
+doi: 10.5281/zenodo.22004644   # reserved (draft record, preregistered; resolves on publish)
 # preferred-citation: the paper note record - fill its DOI after publish
 keywords:
   - persistent tensors

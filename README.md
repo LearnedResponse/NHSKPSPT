@@ -2,6 +2,9 @@
 
 Paper and exact verification bundle.
 
+Software bundle DOI (reserved, resolves on publish):
+[10.5281/zenodo.22004644](https://doi.org/10.5281/zenodo.22004644)
+
 We revisit the Kronecker-closure claim for symmetric persistent tensors
 in Gharahi's preprint (arXiv:2608.11182), isolate a Segre-ideal
 obstruction in the proof of its Proposition 10 (no counterexample is
@@ -42,4 +45,5 @@ paper's §8.
 ## Status
 
 v0.1 — proof candidates pending external review; see the paper's
-"A note on process" section.
+"A note on process" section. Zenodo records are drafts with
+reserved DOIs; nothing is published yet.
