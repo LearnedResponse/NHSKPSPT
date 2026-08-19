@@ -2,10 +2,9 @@
 
 Paper and exact verification bundle.
 
-Preprint DOI (reserved, resolves on publish):
-[10.5281/zenodo.22004540](https://doi.org/10.5281/zenodo.22004540)
-Software bundle DOI (reserved, resolves on publish):
-[10.5281/zenodo.22004644](https://doi.org/10.5281/zenodo.22004644)
+Preprint DOI: [10.5281/zenodo.22004540](https://doi.org/10.5281/zenodo.22004540)
+Software bundle DOI: [10.5281/zenodo.22004644](https://doi.org/10.5281/zenodo.22004644)
+(published 2026-08-19)
 
 We revisit the Kronecker-closure claim for symmetric persistent tensors
 in Gharahi's preprint (arXiv:2608.11182), isolate a Segre-ideal
@@ -47,5 +46,5 @@ paper's §8.
 ## Status
 
 v0.1 — proof candidates pending external review; see the paper's
-"A note on process" section. Zenodo records are drafts with
-reserved DOIs; nothing is published yet.
+"A note on process" section. Both Zenodo records are published
+(2026-08-19).
