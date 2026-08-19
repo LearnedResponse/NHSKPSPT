@@ -20,7 +20,8 @@ see the map below to run individual scripts.
 | §8 census: quartic sweep (7175 forms → 156 certified) and quintic partial block (151) | `repair1/hunt.py` (certificates), `repair2/run_hunt.py` (gates) | `repair1/out_hunt.txt`, `repair2/out_hunt_gates_44.txt`, `_45.txt` | hours |
 | §8 census: four Kronecker products built in the full product space (D = 4, 6, 8, 9) | `repair2/run_kron.py` | `repair2/out_kron_gates.txt` | ~1 h (the D=9 symbolic certificate times out by design and falls back to the decomposable route, as disclosed in the paper) |
 | §8 negative controls (6 nonpersistent forms fail JC; the JC-passes/TR-fails toy; T-without-JC span) | `repair2/controls.py`, `repair1/toy_sep.py` | `repair2/out_controls.txt`, `repair1/out_toy_sep.txt` | minutes |
-| §8 pair/equation bookkeeping (2204 deduplicated pairs / 320 distinct inputs) | `repair2/jstats.py` | `repair2/out_jstats.txt` | seconds |
+| §8 pair/equation bookkeeping — raw execution census (321 gate executions, 2214 pairs) | `repair2/jstats.py` | `repair2/out_jstats.txt` | seconds |
+| §8 published deduplicated census (320 distinct inputs, 2204 pairs), derived from the raw census by reconciling the literal duplicate (GO Example 28 appears in both the named forms and the (4,4) hunt block) | `repair2/dedup_census.py` | `repair2/out_dedup_census.txt` | seconds |
 | §7 Veronese contraction: seeded randomized checks of the contraction identity | `repair2/veronese.py` | `repair2/out_veronese.txt` | minutes |
 | T-closure / one-slot closure exploration | `repair1/run_T.py` | `repair1/out_T.txt` | minutes |
 | Memory calibration for the long runs (no mathematical content) | `repair2/calib.py` | `repair2/out_calib.txt` | seconds |
@@ -45,5 +46,5 @@ python3 verify_all.py             # fast tier: regenerate + byte-compare
 python3 verify_all.py --list      # show all tiers
 ```
 
-`MANIFEST.sha256` pins every file in this bundle.  Code license:
+`MANIFEST.sha256` pins every verification file (this directory tree; the paper and repository metadata sit outside it).  Code license:
 Apache-2.0 (see `LICENSE`).

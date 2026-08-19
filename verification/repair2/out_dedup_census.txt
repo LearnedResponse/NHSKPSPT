@@ -1,0 +1,5 @@
+raw execution census (as in jstats.py): 321 gate executions, 2214 Jordan-pair tests
+  named 35 + hunt 2094 + kron 85 pairs
+literal duplicate: GOEx28 appears in the named forms AND the (4,4) hunt block; 10 pairs counted twice
+deduplicated census (as published): 320 distinct literal inputs, 2204 Jordan-pair tests
+OK: published 320 / 2204 derived from the committed raw census

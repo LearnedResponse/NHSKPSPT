@@ -13,6 +13,7 @@ FAST = [  # (script, snapshot) - each finishes in seconds to ~2 min
     ("check_tri.py", "out_tri.txt"),
     ("repair1/e2e.py", "repair1/out_e2e.txt"),
     ("repair2/jstats.py", "repair2/out_jstats.txt"),
+    ("repair2/dedup_census.py", "repair2/out_dedup_census.txt"),
 ]
 LONG = ["run_probes.py", "repair1/e2e_more.py", "repair1/e2e_r3.py",
         "repair1/contract.py", "repair1/closure_oneslot.py", "repair1/run_T.py",
