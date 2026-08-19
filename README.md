@@ -2,7 +2,8 @@
 
 Paper and exact verification bundle.
 
-Preprint DOI: [10.5281/zenodo.22004540](https://doi.org/10.5281/zenodo.22004540)
+Preprint DOI (all versions): [10.5281/zenodo.22004539](https://doi.org/10.5281/zenodo.22004539)
+(current: v2, [10.5281/zenodo.22006876](https://doi.org/10.5281/zenodo.22006876))
 Software bundle DOI: [10.5281/zenodo.22004644](https://doi.org/10.5281/zenodo.22004644)
 (published 2026-08-19)
 
