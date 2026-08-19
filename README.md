@@ -2,6 +2,8 @@
 
 Paper and exact verification bundle.
 
+Preprint DOI (reserved, resolves on publish):
+[10.5281/zenodo.22004540](https://doi.org/10.5281/zenodo.22004540)
 Software bundle DOI (reserved, resolves on publish):
 [10.5281/zenodo.22004644](https://doi.org/10.5281/zenodo.22004644)
 
